@@ -1,13 +1,16 @@
-import React from 'react';
+import { serverUrl } from "../utility/config";
+const getProductsUrl = "/products";
 
-const serverUrl = 'http://localhost:7878';
-const getProductsUrl = '/products';
+// export const getProducts = () =>{
+//     return (
+//         fetch(`${serverUrl}${getProductsUrl}`)
+//         .then((res) => {
+//             return res.json()
+//         })
+//     );
+// }
 
-export const getProducts = () =>{
-    return (
-        fetch(`${serverUrl}${getProductsUrl}`)
-        .then((res) => {
-            return res.json()
-        })
-    );
-}
+export const getProducts = async () => {
+    const res = await fetch(`${serverUrl}${getProductsUrl}`);
+    return await res.json();
+};

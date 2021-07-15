@@ -1,20 +1,114 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  
+    margin: 0;
+    font-family: "Bona Nova", serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.dark-mode {
+    background-color: black;
+    color: whitesmoke;
+}
+
+.dark-mode a {
+    color: cornsilk;
 }
 
 
-.dark-mode{
-  background-color: black;
-  color: yellow;
+h1 {
+    text-align: center;
 }
+
+a{
+    text-decoration: none;
+}
+
+/*NAV
+*/
+.menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav {
+    margin-top: 30px;
+    margin-right: 20px;
+    gap: 10px;
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    /* background-color: whitesmoke; */
+}
+
+.nav a {
+    text-decoration: none;
+    padding: 1em;
+    background-color: rgb(45, 170, 225);
+    color: white;
+    border-radius: 10% 0 10% 0;
+    text-transform: uppercase;
+    transition: all 0.5s ease-in-out;
+}
+
+.nav a:hover {
+    background-color: rgb(252, 220, 36);
+}
+
+.mainPhoto {
+    display: flex;
+    justify-content: center;
+}
+
+.logoPet {
+    height: 100px;
+    width: auto;
+}
+
+/* Home Page
+ */
+
+.homeWrap {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 3rem 0 3rem;
+}
+
+.homePage {
+    max-width: 30%;
+}
+
+div:nth-of-type(1) p {
+    padding-top: 1.5rem;
+    max-width: 500px;
+    font-size: large;
+}
+
+/* About Page
+  */
+
+.aboutWrap {
+    display: flex;
+}
+
+/* .grummiDog img {
+      max-width: 500px;
+  } */
+
+.aboutPage {
+    margin: 0 auto;
+}
+
+
+/* Category
+ */
+
+
+ /* for example its display: 3 div copntainers */
+ .categories{ 
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+ }
+
+ /* .test{
+     background-color: red;
+ } */
+

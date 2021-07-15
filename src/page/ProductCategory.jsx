@@ -1,22 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getCategoryItems } from "../network/getCategoryItems";
+import { ProductItem } from "../component/ProductItem";
 
 export const ProductCategory = (props) => {
-  const { category, brand } = props.match.params;
+    const { category } = props.match.params;
+    const [data, setData] = useState(null);
 
-  const getQuerysParams = (query, name) => {
-    return new URLSearchParams(query).get(name);
-  };
+    useEffect(() => {
+        getCategoryItems(category).then((result) => {
+            setData(result);
+        });
+    }, [category]);
 
-  const order = getQuerysParams(props.location.search,"order");
-
-  return (
-    <div>
-      Product Category <br />
-      Category: {category} <br />
-      Brand: {brand} <br />
-      Order: {order}
-    </div>
-  );
+    if (!data) {
+        return <div>Loading...</div>;
+    } else {
+        return (
+            <div>
+                {data.map((product) => (
+                    <ProductItem
+                        key={product.id}
+                        brand={product.brand}
+                        name={product.name}
+                        price={product.price}
+                        species={product.for}
+                    />
+                ))}
+            </div>
+        );
+    }
 };
-
-//  const order = new URLSearchParams(props.location.search).get('order')
