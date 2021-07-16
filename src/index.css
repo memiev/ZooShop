@@ -112,3 +112,12 @@ div:nth-of-type(1) p {
      background-color: red;
  } */
 
+
+
+
+ /* MODAL
+  */
+  .modal{
+    display: flex;
+    justify-content: center;
+  }

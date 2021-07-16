@@ -5,7 +5,7 @@ export const Home = () => {
     return (
         <div className="homeWrap">
 
-            <div clasName="homePage">
+            <div className="homePage">
                 <h1>Welcome to Smile Pet</h1>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Est

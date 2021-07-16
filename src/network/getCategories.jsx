@@ -10,7 +10,13 @@ const getProductsUrl = "/products";
 //     );
 // }
 
-export const getProducts = async () => {
-    const res = await fetch(`${serverUrl}${getProductsUrl}`);
+export const getCategories = async (params="") => { //props.match.params
+    const {category, id} = params
+    
+    const categoryParam = category ? `/${category}` : '';
+    const idParam = id ? `/${id}` : '';
+
+    const res = await fetch(`${serverUrl}${getProductsUrl}${categoryParam}${idParam}`);
+    
     return await res.json();
 };

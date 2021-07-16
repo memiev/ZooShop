@@ -5,13 +5,13 @@ export const useDarkMode = (initialState = false) => {
     const [enabled, setEnabled] = useState(initialState);
 
     useEffect(() => {
-            const clasName = 'dark-mode';
+            const className = 'dark-mode';
             const element = window.document.body
 
             if(enabled) {
-                element.classList.add(clasName);
+                element.classList.add(className);
             }else{
-                element.classList.remove(clasName);
+                element.classList.remove(className);
             }
         } , [enabled]);
    

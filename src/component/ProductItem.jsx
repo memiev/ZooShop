@@ -1,15 +1,20 @@
-import React from 'react';
+import React from "react";
+import styles from "../styles/ProductItem.module.css";
+import { Link } from "react-router-dom";
 
-export const ProductItem = ({brand, name, price, species}) =>{ //shows list of items IN chosen category.
-    return(
-        <div>
-            <h2>{brand}</h2>
-            <p>Name: {name}</p>
-            <p>Species: {species}</p>
-            <p>Price: {price}$</p>
+export const ProductItem = ({ brand, name, price, species,category, id }) => {
+    //shows list of items IN chosen category.
+    return (
+        <div className={styles.itemBox}>
+            <Link to={`/products/${category}/${id}`}>
+                <h2>{brand}</h2>
+                <p>Name: {name}</p>
+                <p>Species: {species}</p>
+                <p>Price: {price}$</p>
+            </Link>
         </div>
     );
-}
+};
 
 //SERVER:
 // id: 0,

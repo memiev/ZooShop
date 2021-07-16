@@ -1,29 +1,25 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-import { getProducts } from "../network/getPrducts";
-import { CategoryItem } from "../component/CategoryItem";
+import { getCategories } from "../network/getCategories";
+import { CategoryList } from "../component/CategoryList";
 import load from "../assets/load.gif";
+
+import Modal from "../component/Modal/modal";
 
 export const Category = () => {
     const [data, setData] = useState(null);
     const [err, setErr] = useState(false);
-
-    // useEffect(()=> {
-    //     getProducts().then((res) => {
-    //         setData(res);
-    //     });
-
-    // }, [])
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         (async () => {
-            const res = await getProducts().catch((err) => {
+            const res = await getCategories().catch((err) => {
                 setErr(true);
             });
             setData(res);
         })();
-    }, []); // TEST DECISION
+    }, []);
 
     if (err) {
         return <div>Cannot read data, try again leter.</div>;
@@ -36,11 +32,54 @@ export const Category = () => {
         );
     } else {
         return (
-            <div className='categories'>
-                {data.map((product) => (
-                    <CategoryItem key={product.id} title={product.title} className='test' />
-                ))}
+            <div>
+                <h1>Categories</h1>
+                <div className="modal">
+                    <button
+                        onClick={() => {
+                            setIsModalOpen(true);
+                        }}
+                    >
+                        Open Modal
+                    </button>
+                    <Modal
+                        isOpen={isModalOpen}
+                        onClose={() => {
+                            setIsModalOpen(false);
+                        }}
+                        title={"Some Title"}
+                    >
+                        <p>
+                            <span>Svetlio</span> <br />
+                            <span>Denis</span> <br />
+                            <span>Valeri</span> <br />
+                            <span>Andrey</span> <br />
+                            <span>Joro</span> <br />
+                        </p>
+                    </Modal>
+                </div>
+
+                <div className="categories">
+                    {data.map((product) => (
+                        <CategoryList key={product.id} title={product.title} />
+                    ))}
+                </div>
             </div>
         );
     }
 };
+
+// data = [
+//     {
+//         id: 0,
+//         title: "food",
+//     },
+//     {
+//         id: 1,
+//         title: "toys",
+//     },
+//     {
+//         id: 2,
+//         title: "brushes",
+//     },
+// ];

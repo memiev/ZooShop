@@ -83,7 +83,7 @@ const foodProducts = [
 const brushProducts = [
     {
         id: 0,
-        category: "brush",
+        category: "brushes",
         brand: "Whiskas",
         name: "For Kittens",
         for: "cats",
@@ -91,7 +91,7 @@ const brushProducts = [
     },
     {
         id: 1,
-        category: "brush",
+        category: "brushes",
         brand: "Pedigree",
         name: "For Adults",
         for: "dogs",
@@ -103,7 +103,7 @@ const brushProducts = [
 const toyProducts = [
     {
         id: 0,
-        category: "toy",
+        category: "toys",
         brand: "Kitty-Laze",
         name: "Laser",
         for: "cats",
@@ -111,7 +111,7 @@ const toyProducts = [
     },
     {
         id: 1,
-        category: "brush",
+        category: "toys",
         brand: "Doggy-Chew",
         name: "Latex Bone",
         for: "dogs",
@@ -119,7 +119,7 @@ const toyProducts = [
     },
     {
         id: 2,
-        category: "toy",
+        category: "toys",
         brand: "Kitty-Laze",
         name: "Mouse",
         for: "cats",
@@ -127,7 +127,7 @@ const toyProducts = [
     },
     {
         id: 3,
-        category: "brush",
+        category: "toys",
         brand: "Doggy-Chew",
         name: "Tug Rope",
         for: "dogs",

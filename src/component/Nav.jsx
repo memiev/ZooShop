@@ -5,8 +5,7 @@ import logoPet from "../assets/logoPet.png";
 
 export const Nav = () => {
     const [darkMode, setDarkMode] = useDarkMode();
-
-    console.log(darkMode); //Line 7:10:  'darkMode' is assigned a value but never used  no-unused-vars
+    console.log("Dark Mode is", darkMode ? "On" : "Off");
 
     const handleOnChange = ({ target: { checked } }) => {
         setDarkMode(checked);
@@ -41,7 +40,7 @@ export const Nav = () => {
 
             <ul className="nav">
                 <li>
-                    Dark Mode{" "}
+                    Dark Mode
                     <input type="checkbox" onChange={handleOnChange} />
                 </li>
                 <li>

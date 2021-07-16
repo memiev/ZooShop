@@ -1,0 +1,18 @@
+.SingleItemdisplayedWrap{
+display: flex;
+justify-content: center;
+}
+
+
+.SingleItemdisplayed{
+    display: flex;
+    flex-direction: column;
+    max-width: 20%;
+    border-radius:5% 0;
+    background-color: rebeccapurple;
+    padding: 2rem;
+    /* text-transform: capitalize; */
+}
+.SingleItemdisplayed h2{
+    color: white;
+}
