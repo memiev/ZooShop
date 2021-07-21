@@ -18,10 +18,11 @@ export const ProductCategory = (props) => {
     } else {
         return (
             <div className={styles.productsListWrap}>
+               
                 {data.map((product) => (
                     <ProductItem
                         key={product.id}
-                        id = {product.id}
+                        id={product.id}
                         category={product.category}
                         brand={product.brand}
                         name={product.name}

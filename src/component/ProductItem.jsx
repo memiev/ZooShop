@@ -1,8 +1,18 @@
 import React from "react";
 import styles from "../styles/ProductItem.module.css";
 import { Link } from "react-router-dom";
+import { addToCart, removeFromCart } from "../redux/action-creators";
+import { useDispatch } from "react-redux";
 
-export const ProductItem = ({ brand, name, price, species,category, id }) => {
+export const ProductItem = ({ brand, name, price, species, category, id }) => {
+    const dispatch = useDispatch();
+    const handleOnAddClick = () => {
+        dispatch(addToCart({ brand, name, price, id }));
+    };
+
+    const handleOnRemoveClick = () => {
+        dispatch(removeFromCart({ brand, name, price, id }));
+    };
     //shows list of items IN chosen category.
     return (
         <div className={styles.itemBox}>
@@ -12,6 +22,8 @@ export const ProductItem = ({ brand, name, price, species,category, id }) => {
                 <p>Species: {species}</p>
                 <p>Price: {price}$</p>
             </Link>
+            <button onClick={handleOnAddClick}>Add to cart</button>
+            <button onClick={handleOnRemoveClick}>Remove from cart</button>
         </div>
     );
 };

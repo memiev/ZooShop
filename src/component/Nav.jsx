@@ -2,8 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDarkMode } from "../hooks/useDarkMode";
 import logoPet from "../assets/logoPet.png";
+import { useSelector } from "react-redux";
 
 export const Nav = () => {
+    const cart = useSelector((state) => state.cart);
+
     const [darkMode, setDarkMode] = useDarkMode();
     console.log("Dark Mode is", darkMode ? "On" : "Off");
 
@@ -39,6 +42,9 @@ export const Nav = () => {
             </div>
 
             <ul className="nav">
+                <li>
+                    <h2>Items in cart: {cart.length}</h2>
+                </li>
                 <li>
                     Dark Mode
                     <input type="checkbox" onChange={handleOnChange} />
